@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="assets/styles.css" />
     <script defer src="js/theme.js"></script>
+    <script defer src="js/app.js"></script>
   </head>
 
   <body>
@@ -41,16 +42,37 @@
       </div>
 
       <section class="hero">
-        <h1>Подбор новостроек по бюджету</h1>
+        <h1>Подбор новостроек по бюджету и району</h1>
         <p>
-          Быстро покажем клиенту подходящие ЖК. Введите бюджет — получите до 5 вариантов,
-          отсортированных по цене, с описанием и локацией.
+          Укажите бюджет клиента и при необходимости выберите район — покажем до 5
+          подходящих ЖК, отсортированных по цене.
         </p>
 
-        <div class="cta-row">
-          <a class="btn-primary" href="Подбор%20ЖК.html">Открыть подбор</a>
-          <a class="btn-secondary" href="#features">Как это работает</a>
+        <div class="search-block" id="search">
+          <div class="search-fields">
+            <div class="field">
+              <label for="budgetInput">Бюджет клиента (в тенге)</label>
+              <input
+                type="number"
+                id="budgetInput"
+                placeholder="Например: 35000000"
+              />
+            </div>
+
+            <div class="field">
+              <label for="districtSelect">Район</label>
+              <select id="districtSelect">
+                <option value="">Все районы</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" onclick="findApartments()">
+            Подобрать ЖК
+          </button>
         </div>
+
+        <div class="results" id="results"></div>
 
         <div class="features" id="features">
           <div class="feature">
@@ -58,12 +80,12 @@
             <p>Показываем ЖК дешевле бюджета или до +15% к нему.</p>
           </div>
           <div class="feature">
-            <h3>Удобные карточки</h3>
-            <p>Фото, цена, район, короткое описание — всё на одной карточке.</p>
+            <h3>Фильтр по району</h3>
+            <p>Можно выбрать конкретный район или оставить «Все районы».</p>
           </div>
           <div class="feature">
-            <h3>Светлая/тёмная тема</h3>
-            <p>Переключайте тему кнопкой в правом верхнем углу, выбор сохраняется.</p>
+            <h3>Удобные карточки</h3>
+            <p>Фото, цена, район, короткое описание — всё на одной карточке.</p>
           </div>
         </div>
       </section>
