@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Подбор новостроек — быстрый старт</title>
+
+    <script>
+      // применяем тему до отрисовки, чтобы не было "мигания"
+      (function () {
+        try {
+          var saved = localStorage.getItem("jk-theme");
+          if (saved) {
+            document.documentElement.setAttribute("data-theme", saved);
+          } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="js/theme.js"></script>
+  </head>
+
+  <body>
+    <button
+      type="button"
+      class="theme-toggle"
+      id="themeToggle"
+      aria-label="Переключить на тёмную тему"
+      title="Переключить тему"
+    >
+      <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+    </button>
+
+    <div class="container">
+      <div class="nav">
+        <div class="brand">Новостройки • Подбор</div>
+        <div style="color: var(--text-muted)">Алматы и область</div>
+      </div>
+
+      <section class="hero">
+        <h1>Подбор новостроек по бюджету</h1>
+        <p>
+          Быстро покажем клиенту подходящие ЖК. Введите бюджет — получите до 5 вариантов,
+          отсортированных по цене, с описанием и локацией.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn-primary" href="Подбор%20ЖК.html">Открыть подбор</a>
+          <a class="btn-secondary" href="#features">Как это работает</a>
+        </div>
+
+        <div class="features" id="features">
+          <div class="feature">
+            <h3>Фильтр по бюджету</h3>
+            <p>Показываем ЖК дешевле бюджета или до +15% к нему.</p>
+          </div>
+          <div class="feature">
+            <h3>Удобные карточки</h3>
+            <p>Фото, цена, район, короткое описание — всё на одной карточке.</p>
+          </div>
+          <div class="feature">
+            <h3>Светлая/тёмная тема</h3>
+            <p>Переключайте тему кнопкой в правом верхнем углу, выбор сохраняется.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

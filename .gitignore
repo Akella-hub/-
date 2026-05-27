@@ -1,0 +1,18 @@
+# Даже если Git пока не установлен, файл полезен на будущее
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Node / Python (если позже добавите сборку)
+node_modules/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
